@@ -88,6 +88,7 @@
             this.rdbChrome.TabStop = true;
             this.rdbChrome.Text = "Chrome";
             this.rdbChrome.UseVisualStyleBackColor = true;
+            this.rdbChrome.CheckedChanged += new System.EventHandler(this.rdbChrome_CheckedChanged);
             // 
             // pnlNav
             // 
@@ -109,6 +110,7 @@
             this.rdbEdge.TabStop = true;
             this.rdbEdge.Text = "Edge";
             this.rdbEdge.UseVisualStyleBackColor = true;
+            this.rdbEdge.CheckedChanged += new System.EventHandler(this.rdbEdge_CheckedChanged);
             // 
             // rdbFirefox
             // 
@@ -120,6 +122,7 @@
             this.rdbFirefox.TabStop = true;
             this.rdbFirefox.Text = "Firefox";
             this.rdbFirefox.UseVisualStyleBackColor = true;
+            this.rdbFirefox.CheckedChanged += new System.EventHandler(this.rdbFirefox_CheckedChanged);
             // 
             // label1
             // 
@@ -163,6 +166,7 @@
             this.btnGo.TabIndex = 9;
             this.btnGo.Text = "Fazer Login";
             this.btnGo.UseVisualStyleBackColor = true;
+            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
             // 
             // pnlAction
             // 
