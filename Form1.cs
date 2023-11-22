@@ -18,16 +18,17 @@ namespace _1_Selenium_UlifeTest
         public Form1()
         {
             InitializeComponent();
+            cbxSite.SelectedIndex = 0;
         }
 
         private void cbxSite_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbxSite.SelectedIndex == 1)
+            if (cbxSite.SelectedIndex == 0)
             {
                 SeleniumCore.selectedWebsite = "Sala Virtual";
             }
 
-            else if (cbxSite.SelectedIndex > 1)
+            else if (cbxSite.SelectedIndex > 0)
             {
                 SeleniumCore.selectedWebsite = "Portal";
             }
@@ -61,8 +62,28 @@ namespace _1_Selenium_UlifeTest
 
         private void btnGo_Click(object sender, EventArgs e)
         {
+            SeleniumCore.loginInput = txtLogin.Text;
+            SeleniumCore.passInput = txtSenha.Text;
+
+
             var web = new SeleniumCore();
             web.TestWeb();
         }
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            Application.Exit();    
+        }
+
+        private void txtLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }

@@ -14,11 +14,15 @@ namespace _1_Selenium_UlifeTest
     {
         public static string selectedNav;
         public static string selectedWebsite;
-        public static string loginInput;
+        public static string loginInput; 
         public static string passInput;
-        string navAddress;
+        public string navAddress;
 
         public IWebDriver driver;
+
+        private IWebElement txtLoginWeb;
+        private IWebElement txtSenhaWeb;
+        private IWebElement btnSubmit;
 
         /// <summary>
         /// Ponto de entrada principal para o aplicativo.
@@ -56,19 +60,34 @@ namespace _1_Selenium_UlifeTest
         public void TestWeb()
         {
             
-            if (selectedNav == "Sala Virtual")
+            if (selectedWebsite == "Sala Virtual")
             {
                navAddress = "https://www.ulife.com.br/login.aspx";
             }
 
-            else if (selectedNav == "Portal")
+            else if (selectedWebsite == "Portal")
             {
                 navAddress = "https://aluno.anhembi.br/SOL/aluno/index.php/index/seguranca/dev/instituicao/125";
             }
 
+            else
+            {
+                Console.WriteLine("Opa");
+            }
+
+
             driver.Navigate().GoToUrl(navAddress);
-            driver.FindElement(By.XPath("//input[@name='ctl00$b$txtLogin' and @id='txtLogin' and @type='text']"));
+            txtLoginWeb = driver.FindElement(By.XPath("//input[@name='ctl00$b$txtLogin' and @id='txtLogin' and @type='text']"));
+            txtSenhaWeb = driver.FindElement(By.XPath("//input[@name='ctl00$b$txtPassword' and @id='txtPassword' and @type='password']"));
+            btnSubmit = driver.FindElement(By.XPath("//button[@id='ctl00_b_imbLogin']"));
+
+
+            txtLoginWeb.SendKeys(loginInput);
+            txtSenhaWeb.SendKeys(passInput);
+            btnSubmit.Click();
         }
+
+
 
 
 

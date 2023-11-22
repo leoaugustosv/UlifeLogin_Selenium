@@ -41,13 +41,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnGo = new System.Windows.Forms.Button();
             this.pnlAction = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.pnlNav.SuspendLayout();
             this.pnlAction.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbxSite
             // 
+            this.cbxSite.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxSite.FormattingEnabled = true;
             this.cbxSite.Items.AddRange(new object[] {
             "Ulife - Sala Virtual",
@@ -81,6 +82,7 @@
             // rdbChrome
             // 
             this.rdbChrome.AutoSize = true;
+            this.rdbChrome.Checked = true;
             this.rdbChrome.Location = new System.Drawing.Point(3, 6);
             this.rdbChrome.Name = "rdbChrome";
             this.rdbChrome.Size = new System.Drawing.Size(61, 17);
@@ -107,7 +109,6 @@
             this.rdbEdge.Name = "rdbEdge";
             this.rdbEdge.Size = new System.Drawing.Size(50, 17);
             this.rdbEdge.TabIndex = 5;
-            this.rdbEdge.TabStop = true;
             this.rdbEdge.Text = "Edge";
             this.rdbEdge.UseVisualStyleBackColor = true;
             this.rdbEdge.CheckedChanged += new System.EventHandler(this.rdbEdge_CheckedChanged);
@@ -119,7 +120,6 @@
             this.rdbFirefox.Name = "rdbFirefox";
             this.rdbFirefox.Size = new System.Drawing.Size(56, 17);
             this.rdbFirefox.TabIndex = 4;
-            this.rdbFirefox.TabStop = true;
             this.rdbFirefox.Text = "Firefox";
             this.rdbFirefox.UseVisualStyleBackColor = true;
             this.rdbFirefox.CheckedChanged += new System.EventHandler(this.rdbFirefox_CheckedChanged);
@@ -140,6 +140,7 @@
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(266, 20);
             this.txtLogin.TabIndex = 6;
+            this.txtLogin.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
             // 
             // txtSenha
             // 
@@ -147,6 +148,7 @@
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(266, 20);
             this.txtSenha.TabIndex = 8;
+            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
             // 
             // label2
             // 
@@ -170,21 +172,22 @@
             // 
             // pnlAction
             // 
-            this.pnlAction.Controls.Add(this.button1);
+            this.pnlAction.Controls.Add(this.btnCancel);
             this.pnlAction.Controls.Add(this.btnGo);
             this.pnlAction.Location = new System.Drawing.Point(17, 288);
             this.pnlAction.Name = "pnlAction";
             this.pnlAction.Size = new System.Drawing.Size(266, 31);
             this.pnlAction.TabIndex = 10;
             // 
-            // button1
+            // btnCancel
             // 
-            this.button1.Location = new System.Drawing.Point(84, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCancel.Location = new System.Drawing.Point(84, 5);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 10;
+            this.btnCancel.Text = "Cancelar";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // Form1
             // 
@@ -225,7 +228,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnGo;
         private System.Windows.Forms.Panel pnlAction;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancel;
     }
 }
 
